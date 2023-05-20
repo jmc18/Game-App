@@ -20,7 +20,7 @@ const routes: Routes = [
         path: 'register-game', component: AddGameComponent, title: 'Registrar Game'
       },
       {
-        path: 'game/:categoryGame?', component: GameListComponent
+        path: 'game/:categoryGame', component: GameListComponent
       },
     ]
   },
