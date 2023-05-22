@@ -1,1 +1,85 @@
-<p>add-game works!</p>
+<div class="row justify-content-center">
+
+    <div class="col-lg-8 col-md-12">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Create New Game</h1>
+                            </div>
+                            <form [formGroup]="gameForm" (ngSubmit)="onSubmit(gameForm)">
+                                <div class="form-group row my-3">
+                                    <div class="col-12 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" formControlName="title"
+                                            placeholder="Name">
+                                    </div>
+                                    <div class="invalid-feedback" *ngIf="gameForm?.get('title')!.invalid && (gameForm?.get('title')!.dirty || gameForm?.get('title')!.touched)">
+                                        Please provide a name.
+                                    </div>
+                                </div>
+                                <div class="form-group my-3">
+                                    <input type="text" class="form-control form-control-user" formControlName="imageUrl"
+                                        placeholder="Image Url">
+                                        <div class="invalid-feedback" *ngIf="gameForm?.get('imageUrl')!.invalid 
+                                        && (gameForm?.get('imageUrl')!.dirty || gameForm?.get('imageUrl')!.touched)">
+                                            Please provide a n image url.
+                                        </div>
+                                </div>
+                                <div class="form-group row my-3">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <select class="form-control form-control-user" formControlName="category">
+                                            <option>Select a category</option>
+                                            <option *ngFor="let category of categoryList" value={{category?.categoryId}}>{{category?.categoryName}}</option>
+                                        </select>
+                                        <div class="invalid-feedback" *ngIf="gameForm?.get('category')!.invalid 
+                                        && (gameForm?.get('category')!.dirty || gameForm?.get('category')!.touched)">
+                                            Please provide a category.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row my-3">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="date" class="form-control form-control-user"
+                                        formControlName="releaseDate" placeholder="Relase Date">
+                                        <div class="invalid-feedback" *ngIf="gameForm?.get('releaseDate')!.invalid 
+                                        && (gameForm?.get('releaseDate')!.dirty || gameForm?.get('releaseDate')!.touched)">
+                                            Please provide a the released Date.
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control form-control-user"
+                                        formControlName="reating" placeholder="Rating">
+                                        <div class="invalid-feedback" *ngIf="gameForm?.get('reating')!.invalid 
+                                        && (gameForm?.get('reating')!.dirty || gameForm?.get('reating')!.touched)">
+                                            Please provide the Rating.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row my-3">
+                                    <div class="col-sm-12 mb-3 mb-sm-0 ">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" formControlName="isCommingSoon" id="isCommingSonCheck">
+                                        <label class="form-check-label ml-5" for="isCommingSonCheck">
+                                             Is Comming Soon?
+                                        </label>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <button type="submit" [disabled]="gameForm.invalid" class="btn btn-primary btn-user btn-block">
+                                    Register Game
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

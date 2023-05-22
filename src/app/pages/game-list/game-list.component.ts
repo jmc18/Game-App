@@ -24,7 +24,6 @@ export class GameListComponent {
 
   getGamesByCategory(category: string) {
     this.gameService.getGamesByCategory(category).subscribe(data => {
-      console.log(data)
       this.gameList = data;
     })
   }
