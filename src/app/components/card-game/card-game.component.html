@@ -1,1 +1,13 @@
-<p>card-game works!</p>
+
+    <div class="card m-3">
+        <img src={{game?.imageUrl}} class="card-img-top" alt={{game?.title}}>
+        <div class="card-body">
+            <h5 class="card-title">{{game?.title}}</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Rating: </strong> {{game?.rating}}</li>
+              <li class="list-group-item"><strong>Downloads: </strong> {{game?.downloads}}</li>
+              <li class="list-group-item" *ngIf="game?.isComingSoon"><strong>Released: </strong> {{game?.releaseDate?.getDate()}}/{{game?.releaseDate?.getMonth()}}/{{game?.releaseDate?.getFullYear()}}</li>
+              <li class="list-group-item" *ngIf="!game?.isComingSoon"><strong>Comming Soon</strong> </li>
+            </ul>
+        </div>
+      </div>

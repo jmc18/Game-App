@@ -1,1 +1,3 @@
-<p>game-list works! {{category}}</p>
+<div class="row">
+    <app-card-game [game]="game" class="col-md-6 col-xl-4 col-sm-12" *ngFor="let game of gameList" />
+</div>
