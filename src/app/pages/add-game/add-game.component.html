@@ -14,6 +14,7 @@
                             <form [formGroup]="gameForm" (ngSubmit)="onSubmit(gameForm)">
                                 <div class="form-group row my-3">
                                     <div class="col-12 mb-3 mb-sm-0">
+                                        <label class="form-label">Nombre del Juego</label>
                                         <input type="text" class="form-control form-control-user" formControlName="title"
                                             placeholder="Name">
                                     </div>
@@ -22,6 +23,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group my-3">
+                                    <label class="form-label">Imagen</label>
                                     <input type="text" class="form-control form-control-user" formControlName="imageUrl"
                                         placeholder="Image Url">
                                         <div class="invalid-feedback" *ngIf="gameForm?.get('imageUrl')!.invalid 
@@ -31,6 +33,7 @@
                                 </div>
                                 <div class="form-group row my-3">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label class="form-label">Categoria</label>
                                         <select class="form-control form-control-user" formControlName="category">
                                             <option>Select a category</option>
                                             <option *ngFor="let category of categoryList" value={{category?.categoryId}}>{{category?.categoryName}}</option>
@@ -41,6 +44,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label class="form-label">Numero de Descargas</label>
                                     <input type="text" class="form-control form-control-user" formControlName="downloads" placeholder="Descargas">
                                     <div class="invalid-feedback" *ngIf="gameForm?.get('downloads')!.invalid 
                                                                             && (gameForm?.get('downloads')!.dirty || gameForm?.get('downloads')!.touched)">
@@ -50,6 +54,7 @@
                                 </div>
                                 <div class="form-group row my-3">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label class="form-label">Fecha de Lanzamiento</label>
                                         <input type="date" class="form-control form-control-user"
                                         formControlName="releaseDate" placeholder="Relase Date">
                                         <div class="invalid-feedback" *ngIf="gameForm?.get('releaseDate')!.invalid 
@@ -58,6 +63,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
+                                        <label class="form-label">Calificación</label>
                                         <input type="number" class="form-control form-control-user"
                                         formControlName="reating" placeholder="Rating">
                                         <div class="invalid-feedback" *ngIf="gameForm?.get('reating')!.invalid 
@@ -67,9 +73,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group row my-3">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <label class="form-label">Descripción</label>
                                         <textarea class="form-control form-control-user" formControlName="description"
-                                            placeholder="Relase Date"></textarea>
+                                            placeholder="Description"></textarea>
                                        
                                         <div class="invalid-feedback"
                                             *ngIf="gameForm?.get('description')!.invalid 
