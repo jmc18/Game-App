@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { categoryGameList as CategoryListData } from 'src/app/data/category-game-data';
 import { CategoryGame } from 'src/app/models/category-game';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +13,7 @@ export class HomeComponent implements OnInit{
 
   
 
-  constructor() {
+  constructor(private authService: AuthService, private router: Router, ) {
     
   }
 
@@ -19,6 +21,11 @@ export class HomeComponent implements OnInit{
 
   ngOnInit() {
     this.categoryGameList = CategoryListData;
+  }
+
+  logOut(){
+    this.authService.logout();
+    this.router.navigate(['/login'])
   }
 
 }

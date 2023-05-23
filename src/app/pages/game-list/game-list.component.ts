@@ -18,7 +18,6 @@ export class GameListComponent {
     this.activatedRoute.params.subscribe((params) => {
       this.category = params['categoryGame']
       this.getGamesByCategory(this.category)
-      console.log(this.category, params)
     });
   }
 

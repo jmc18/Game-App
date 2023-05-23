@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AddGameComponent } from './pages/add-game/add-game.component';
 import { GameListComponent } from './pages/game-list/game-list.component';
 import { NotFoundError } from 'rxjs';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
     path: 'register', component: RegisterComponent, title: 'Register on Game Store',
   },
   {
-    path: '', component: HomeComponent, title: 'Game Store', children: [
+    path: '', component: HomeComponent, title: 'Game Store', canActivate : [AuthGuard], children: [
       {
         path: 'register-game', component: AddGameComponent, title: 'Registrar Game'
       },

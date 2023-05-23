@@ -11,6 +11,7 @@ import { AddGameComponent } from './pages/add-game/add-game.component';
 import { GameListComponent } from './pages/game-list/game-list.component';
 import { CardGameComponent } from './components/card-game/card-game.component';
 import { NotFoundErrorComponent } from './pages/not-found-error/not-found-error.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { NotFoundErrorComponent } from './pages/not-found-error/not-found-error.
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
