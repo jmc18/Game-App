@@ -39,7 +39,8 @@ export class RegisterComponent {
         return;  
      }  
      else {  
-      let user = new User(uuid4(), this.registerForm.value.userEmail, this.registerForm.value.userName, this.registerForm.value.password)
+        let user = new User(uuid4(), this.registerForm.value.userEmail,
+          this.registerForm.value.userName, this.registerForm.value.password)
       this.userService.addNewUser(user)
        let loginResponse = this.authService.login(user.userEmail, user.userPassword)
        if(loginResponse) 

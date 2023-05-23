@@ -37,7 +37,7 @@ export class AddGameComponent implements OnInit {
     if(form.valid) {
       let categoryGame = this.categoryList?.find(x => x.categoryId === form.value.category);
       var newGame = new Game(uuid4(), categoryGame!, form.value.title,
-      form.value.releaseDate, form.value.imageUr, form.value.reating, form.value.downloads, form.value.isComingSoon)
+        form.value.releaseDate, form.value.imageUrl, form.value.reating, form.value.downloads, form.value.isComingSoon)
       this.gameService.addGame(newGame);
       this.router.navigate([`/game/${form.value.category}`]);
     }

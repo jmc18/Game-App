@@ -10,4 +10,8 @@ export class CardGameComponent {
 
   @Input() game: Game | undefined;
 
+  constructor() {
+    console.log(this.game!)
+  }
+
 }
