@@ -9,7 +9,7 @@
                     <div class="col-12">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create New Game</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Agregar Juego</h1>
                             </div>
                             <form [formGroup]="gameForm" (ngSubmit)="onSubmit(gameForm)">
                                 <div class="form-group row my-3">
@@ -75,7 +75,7 @@
                                 <div class="form-group row my-3">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
                                         <label class="form-label">Descripción</label>
-                                        <textarea class="form-control form-control-user" formControlName="description"
+                                        <textarea class="form-control form-control-user" rows="6" formControlName="description"
                                             placeholder="Description"></textarea>
                                        
                                         <div class="invalid-feedback"
