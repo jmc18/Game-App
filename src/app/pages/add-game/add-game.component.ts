@@ -25,7 +25,9 @@ export class AddGameComponent implements OnInit {
       releaseDate: ['', Validators.required],
       reating: [0, Validators.required],
       downloads: [0, [Validators.required, Validators.pattern("^[0-9]*$")]],
-      isCommingSoon: [false]
+      isCommingSoon: [false],
+      description: ['',Validators.required]
+    
     })
   }
 
@@ -37,7 +39,8 @@ export class AddGameComponent implements OnInit {
     if(form.valid) {
       let categoryGame = this.categoryList?.find(x => x.categoryId === form.value.category);
       var newGame = new Game(uuid4(), categoryGame!, form.value.title,
-        form.value.releaseDate, form.value.imageUrl, form.value.reating, form.value.downloads, form.value.isComingSoon)
+        form.value.releaseDate, form.value.imageUrl, form.value.reating, form.value.downloads,
+        form.value.isComingSoon, form.value.description)
       this.gameService.addGame(newGame);
       this.router.navigate([`/game/${form.value.category}`]);
     }

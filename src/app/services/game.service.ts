@@ -10,8 +10,20 @@ export class GameService {
 
   constructor() { }
 
-  public getGamesByCategory(category: string): Observable<Game[]> {
-    return of(gameList?.filter(x => x?.category?.categoryId === category))
+  public getGamesPopulares(): Observable<Game[]> {
+    return of(gameList?.filter(x => x?.rating >= 4))
+  }
+
+  public getGamesComminSoon(): Observable<Game[]> {
+    return of(gameList?.filter(x => x?.isComingSoon))
+  }
+
+  public getGamesDownloas(): Observable<Game[]> {
+    return of(gameList?.filter(x => x?.downloads >= 50))
+  }
+
+  public getGames(): Observable<Game[]> {
+    return of(gameList)
   }
 
   public addGame(game: Game) {

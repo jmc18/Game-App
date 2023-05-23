@@ -40,6 +40,13 @@
                                             Please provide a category.
                                         </div>
                                     </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control form-control-user" formControlName="downloads" placeholder="Descargas">
+                                    <div class="invalid-feedback" *ngIf="gameForm?.get('downloads')!.invalid 
+                                                                            && (gameForm?.get('downloads')!.dirty || gameForm?.get('downloads')!.touched)">
+                                        Por favor provee el número de descargas.
+                                    </div>
+                                    </div>
                                 </div>
                                 <div class="form-group row my-3">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -58,6 +65,19 @@
                                             Please provide the Rating.
                                         </div>
                                     </div>
+                                </div>
+                                <div class="form-group row my-3">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <textarea class="form-control form-control-user" formControlName="description"
+                                            placeholder="Relase Date"></textarea>
+                                       
+                                        <div class="invalid-feedback"
+                                            *ngIf="gameForm?.get('description')!.invalid 
+                                                                        && (gameForm?.get('description')!.dirty || gameForm?.get('description')!.touched)">
+                                            Please provide a the released Date.
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                                 <div class="form-group row my-3">
                                     <div class="col-sm-12 mb-3 mb-sm-0 ">
